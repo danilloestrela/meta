@@ -8,18 +8,15 @@ const ListAddress: React.FC = () => {
   // const id = 1;
 
   useEffect(() => {
-    api.get(`user`).then((response) => {
-      setAddress(response.data);
-    });
+    api.get(`user`).then((response) => setAddress(response.data));
   }, []);
-
   return (
     <>
       <Title>Usuários e Endereços</Title>
 
       <AddressBox>
         <ul>
-          {addresses.map((address) => (
+          {addresses.map((address: any) => (
             <li key={address.id}>
               <b>Nome:</b>
               {address.name}
@@ -35,7 +32,7 @@ const ListAddress: React.FC = () => {
                 </li>
                 <li>
                   <b>CEP:</b>
-                  {address.CEP}
+                  {address.cep}
                 </li>
                 <li />
               </ul>
